@@ -1,0 +1,4 @@
+﻿  Agent.cpp
+C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(119,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(120,27): warning C4018: '<': signed/unsigned mismatch
+  Survival.vcxproj -> C:\Users\Matei\Desktop\Survival Game\Debug\Survival.exe
