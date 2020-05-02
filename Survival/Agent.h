@@ -17,12 +17,13 @@ protected:
 
     string character;
 
+    bool cooldown;
     static int noOfAgents;
 
     pair <int, int> search_nearest_agent(Map);
 public:
     Agent();
-    Agent(int, int, int, int);
+    Agent(int, int, int, int, bool);
     void setPosition(int, int);
     int getPositionY() const;
     int getPositionX() const;
@@ -30,6 +31,10 @@ public:
     int getHealth() const;
     void setDamage(int);
     int getDamage() const;
+
+    void setcooldown(bool);
+    bool getcooldown() const;
+
     bool operator== (const Agent& a);
     bool operator!= (const Agent& a);
     void moveAgent(Map&);
@@ -37,6 +42,7 @@ public:
 
     virtual void setCharacter(string) = 0;
     virtual string getCharacter() = 0;
+    virtual void ability() = 0;
 
     virtual ~Agent() = 0 ;
 

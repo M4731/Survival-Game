@@ -150,7 +150,6 @@
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AgentAssassin.cpp" />
     <ClCompile Include="AgentHealer.cpp" />
-    <ClCompile Include="AgentTest1.cpp" />
     <ClCompile Include="AgentWarrior.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -160,7 +159,6 @@
     <ClInclude Include="Agent.h" />
     <ClInclude Include="AgentAssassin.h" />
     <ClInclude Include="AgentHealer.h" />
-    <ClInclude Include="AgentTest1.h" />
     <ClInclude Include="AgentWarrior.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="Map.h" />

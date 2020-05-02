@@ -1,4 +1,9 @@
-﻿  Agent.cpp
-C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(119,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(120,27): warning C4018: '<': signed/unsigned mismatch
+﻿  AgentAssassin.cpp
+C:\Users\Matei\Desktop\Survival Game\Survival\AgentAssassin.cpp(30,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  AgentWarrior.cpp
+C:\Users\Matei\Desktop\Survival Game\Survival\AgentWarrior.cpp(38,37): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  GameEngine.cpp
+C:\Users\Matei\Desktop\Survival Game\Survival\GameEngine.cpp(5,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Survival.cpp
+  Generating Code...
   Survival.vcxproj -> C:\Users\Matei\Desktop\Survival Game\Debug\Survival.exe

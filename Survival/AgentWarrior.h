@@ -6,12 +6,14 @@ class AgentWarrior :
 {
 	double armor;
 public:
-	AgentWarrior(int, int, int, int, double);
+	AgentWarrior(int, int, int, int, bool, double);
 	AgentWarrior();
 	void setArmor(double);
 	double getArmor() const;
 	void setCharacter(string);
 	string getCharacter();
+
+	void ability();
 
 	~AgentWarrior();
 };

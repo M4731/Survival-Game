@@ -8,15 +8,17 @@ Agent::Agent()
     this->positionY = 0;
     this->health = 0;
     this->damage = 0;
+    this->cooldown = 0;
     Agent::noOfAgents++;
 }
 
-Agent::Agent(int x, int y, int health, int damage)
+Agent::Agent(int x, int y, int health, int damage, bool inFight)
 {
     this->positionX = x;
     this->positionY = y;
     this->health = health;
     this->damage = damage;
+    this->cooldown = 0;
     Agent::noOfAgents++;
 }
 
@@ -59,6 +61,16 @@ int Agent::getDamage() const
 int Agent::getNoOfAgents()
 {
     return noOfAgents;
+}
+
+void Agent::setcooldown(bool ok)
+{
+    this->cooldown = ok;
+}
+
+bool Agent::getcooldown() const
+{
+    return this->cooldown;
 }
 
 bool Agent::operator==(const Agent& a)

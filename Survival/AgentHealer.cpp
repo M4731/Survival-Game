@@ -1,6 +1,6 @@
 #include "AgentHealer.h"
 
-AgentHealer::AgentHealer(int positionX, int positionY, int health, int damage, int h) :Agent(positionX, positionY, health, damage)
+AgentHealer::AgentHealer(int positionX, int positionY, int health, int damage, bool inFight, int h) :Agent(positionX, positionY, health, damage, cooldown)
 {
     this->heal = h;
 
@@ -24,6 +24,11 @@ void AgentHealer::setHeal(int h)
 int AgentHealer::getHeal() const
 {
     return heal;
+}
+
+void AgentHealer::ability()
+{
+
 }
 
 AgentHealer::~AgentHealer()

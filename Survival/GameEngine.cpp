@@ -12,7 +12,7 @@ GameEngine::GameEngine()
 	while (agentsOfTypeW)
 	{
 		unsigned loc1 = rand() % x, loc2 = rand() % y;
-		Agent *W =  new AgentWarrior(loc1, loc2, 120, 30, 15);
+		Agent *W =  new AgentWarrior(loc1, loc2, 120, 30, 0, 15);
 		W->setCharacter("W");
 		harta.harta[loc1][loc2] = W->getCharacter();
 		harta.addAgent(W);
@@ -22,7 +22,7 @@ GameEngine::GameEngine()
 	while (agentsOfTypeA)
 	{
 		unsigned loc1 = rand() % x, loc2 = rand() % y;
-		Agent *A = new AgentAssassin(loc1, loc2, 120, 30, 15);
+		Agent *A = new AgentAssassin(loc1, loc2, 120, 30, 0, 15);
 		A->setCharacter("A");
 		harta.harta[loc1][loc2] = A->getCharacter();
 		harta.addAgent(A);
@@ -32,7 +32,7 @@ GameEngine::GameEngine()
 	while (agentsOfTypeH)
 	{
 		unsigned loc1 = rand() % x, loc2 = rand() % y;
-		Agent *H = new AgentHealer(loc1, loc2, 120, 30, 15);
+		Agent *H = new AgentHealer(loc1, loc2, 120, 30, 0, 15);
 		H->setCharacter("H");
 		harta.harta[loc1][loc2] = H->getCharacter();
 		harta.addAgent(H);
@@ -70,6 +70,8 @@ void GameEngine::nextRound()
 	
 		for (Agent* i : harta.agentsVector)
 		{
+			cout << i->getCharacter() << " moved from [ " << i->getPositionX() << " ; " << i->getPositionY() << " ] ";
 			i->moveAgent(harta);
+			cout << "to [ " << i->getPositionX() << " ; " << i->getPositionY() << " ] " << endl;
 		}
 }

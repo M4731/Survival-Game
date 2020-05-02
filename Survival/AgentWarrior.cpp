@@ -1,11 +1,11 @@
 #include "AgentWarrior.h"
 
-AgentWarrior::AgentWarrior(int positionX, int positionY, int health, int damage,double a):Agent( positionX, positionY, health, damage)
+AgentWarrior::AgentWarrior(int positionX, int positionY, int health, int damage, bool inFight,double a):Agent( positionX, positionY, health, damage, cooldown)
 {
     this->armor = a;
 }
 
-AgentWarrior::AgentWarrior():Agent(0,0,0,0)
+AgentWarrior::AgentWarrior():Agent(0,0,0,0,0)
 {
     this->armor = 0;
 }
@@ -28,6 +28,16 @@ void AgentWarrior::setArmor(double a)
 double AgentWarrior::getArmor() const
 {
     return armor;
+}
+
+void AgentWarrior::ability()
+{
+    if (!this->cooldown)
+    {
+        cout << this->character << "'s passive ability makes him take" << this->armor << "% less damage from all sources. ";
+        this->health = this->health + (this->health * this->armor / 100);
+    }
+    this->cooldown = 1;
 }
 
 AgentWarrior::~AgentWarrior()
