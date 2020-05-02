@@ -1,0 +1,3 @@
+﻿  GameEngine.cpp
+C:\Users\Matei\Desktop\Survival Game\Survival\GameEngine.cpp(5,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Survival.vcxproj -> C:\Users\Matei\Desktop\Survival Game\Debug\Survival.exe
