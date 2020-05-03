@@ -1,0 +1,12 @@
+﻿  Agent.cpp
+C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(138,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(139,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(156,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(157,27): warning C4018: '<': signed/unsigned mismatch
+  GameEngine.cpp
+C:\Users\Matei\Desktop\Survival Game\Survival\GameEngine.cpp(5,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Matei\Desktop\Survival Game\Survival\GameEngine.cpp(72,11): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Matei\Desktop\Survival Game\Survival\GameEngine.cpp(78,12): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\Matei\Desktop\Survival Game\Survival\Agent.cpp(159): warning C4715: 'Agent::nextMove': not all control paths return a value
+  Survival.vcxproj -> C:\Users\Matei\Desktop\Survival Game\Debug\Survival.exe

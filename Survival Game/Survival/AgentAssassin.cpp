@@ -1,0 +1,46 @@
+#include "AgentAssassin.h"
+
+AgentAssassin::AgentAssassin(int positionX, int positionY, int health, int damage, bool inFight, int c) :Agent(positionX, positionY, health, damage, cooldown)
+{
+    this->chance = c;
+}
+
+void AgentAssassin::setCharacter(string name)
+{
+    this->character = name;
+}
+
+string AgentAssassin::getCharacter()
+{
+    return character;
+}
+
+void AgentAssassin::setChance(int c)
+{
+    this->chance = c;
+}
+
+int AgentAssassin::getChance() const
+{
+    return chance;
+}
+
+void AgentAssassin::ability()
+{
+    srand(time(NULL));
+    if ( !this->cooldown )
+    {
+        if (rand() % this->chance == 1)
+        {
+            this->damage = 2 * this->damage;
+            cout << this->character << " used their ability and gained double damage for this fight." << endl;
+        }
+        else cout << this->character << " used their ability but nothing happened :( " << endl;
+    }
+    this->cooldown = 1;
+}
+
+AgentAssassin::~AgentAssassin()
+{
+    Agent::noOfAgents--;
+}
