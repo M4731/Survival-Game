@@ -22,6 +22,7 @@ public:
     friend ostream& operator<<(ostream&, const Map&);
     friend class GameEngine;
     friend class Agent;
+    ~Map();
 };
 
 #endif

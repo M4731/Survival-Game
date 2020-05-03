@@ -12,6 +12,7 @@ public:
 	string getCharacter();
 
 	void ability();
+	void abilityFinish();
 
 	~AgentHealer();
 };

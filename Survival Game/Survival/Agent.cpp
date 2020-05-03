@@ -2,6 +2,7 @@
 
 int Agent::noOfAgents = 0;
 
+//constructor default fara parametrii
 Agent::Agent()
 {
     this->positionX = 0;
@@ -12,6 +13,7 @@ Agent::Agent()
     Agent::noOfAgents++;
 }
 
+//constructor default cu parametrii
 Agent::Agent(int x, int y, int health, int damage, bool inFight)
 {
     this->positionX = x;
@@ -63,6 +65,7 @@ int Agent::getNoOfAgents()
     return noOfAgents;
 }
 
+//cooldown-ul este 1 daca abilitatea a fost folosita in lupta si 0 daca nu, getter si setter pentru a-l seta
 void Agent::setcooldown(bool ok)
 {
     this->cooldown = ok;
@@ -73,6 +76,7 @@ bool Agent::getcooldown() const
     return this->cooldown;
 }
 
+//suprascrierea operatorilor de == si != pentru a verifica diferentierea agentilor
 bool Agent::operator==(const Agent& a)
 {
     if (this->positionX == a.getPositionX() && this->positionY == a.getPositionY() && this->health == a.getHealth() && this->damage == a.getDamage()) {
@@ -93,6 +97,8 @@ bool Agent::operator!=(const Agent& a)
     }
 }
 
+//functie care cauta cel mai apropiat agent folosind functia dist = min(x,y) + abs(x-y)
+//unde int x = abs(positionX - i->positionX) si int y = abs(positionY - i->positionY);
 pair<int, int> Agent::search_nearest_agent(Map& harta)
 {
     int distmin = INT16_MAX;
@@ -122,6 +128,7 @@ pair<int, int> Agent::search_nearest_agent(Map& harta)
     }
 }
 
+//agentul se muta spre cel mai apropiat agent folosind o deductie algebrica a directiei in care trebuie sa mearga
 void Agent::moveAgent(Map& harta)
 {
     int y = 0, x = 0;
@@ -135,12 +142,14 @@ void Agent::moveAgent(Map& harta)
     {
         x = ( p.first - positionX ) / abs(positionX - p.first);
     }
+    //cu aceste if-uri nu lasam agentul sa iasa de pe harta
     if ( positionY + y < harta.harta[0].size() && positionY + y >= 0 )
         if (positionX + x < harta.harta.size() && positionX + x >= 0)
             setPosition(positionX + x, positionY + y);
     harta.harta[positionX][positionY] = character;
 }
 
+//exact ca functia moveAgent, doar ca nu il muta, ci returneaza pozitia pe care vrea sa ajunga
 pair<int, int> Agent::nextMove(Map& harta)
 {
     int y = 0, x = 0;
@@ -157,7 +166,8 @@ pair<int, int> Agent::nextMove(Map& harta)
         if (positionX + x < harta.harta.size() && positionX + x >= 0)
             return { positionX + x, positionY + y };
 }
-
 Agent::~Agent()
 {
+
 }
+

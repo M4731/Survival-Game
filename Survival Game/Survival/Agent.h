@@ -18,6 +18,8 @@ protected:
     string character;
 
     bool cooldown;
+    //noOfAgents contorizeaza numarul de agenti, creste de fiecare data cand e construit un agent si scade de fiecare data cand este sters un agent
+    //din pacare nu va fi folosit deloc in proiect, dar il las aici :D
     static int noOfAgents;
 
     pair <int, int> search_nearest_agent(Map&);
@@ -44,6 +46,7 @@ public:
     virtual void setCharacter(string) = 0;
     virtual string getCharacter() = 0;
     virtual void ability() = 0;
+    virtual void abilityFinish() = 0;
 
     virtual ~Agent() = 0 ;
 

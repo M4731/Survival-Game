@@ -1,5 +1,6 @@
 #include "AgentAssassin.h"
 
+//constructori ce se folosesc de constructorul default implementat in clasa abstracta
 AgentAssassin::AgentAssassin(int positionX, int positionY, int health, int damage, bool inFight, int c) :Agent(positionX, positionY, health, damage, cooldown)
 {
     this->chance = c;
@@ -25,6 +26,7 @@ int AgentAssassin::getChance() const
     return chance;
 }
 
+//abilitatea asasinului il face sa aiba o sansa la inceputul fiecarei batalii sa isi dubleze damage-ul
 void AgentAssassin::ability()
 {
     srand(time(NULL));
@@ -40,7 +42,21 @@ void AgentAssassin::ability()
     this->cooldown = 1;
 }
 
+//functie folosita pentru a reseta abilitatea si cooldown-ul acesteia
+void AgentAssassin::abilityFinish()
+{
+    if (this->cooldown)
+    {
+        if ( this->damage >= 60 )
+        {
+            this->damage = this->damage / 2;
+        }
+    }
+    this->cooldown = 0;
+}
+
 AgentAssassin::~AgentAssassin()
 {
     Agent::noOfAgents--;
+    //distrugatorul default functioneaza bine aici
 }

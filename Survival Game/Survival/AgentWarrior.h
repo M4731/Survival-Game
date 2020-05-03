@@ -14,6 +14,7 @@ public:
 	string getCharacter();
 
 	void ability();
+	void abilityFinish();
 
 	~AgentWarrior();
 };

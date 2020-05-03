@@ -4,6 +4,7 @@ Map::Map()
 {
 }
 
+//seteaza mapa de dimensiunile date si o umple de spatii
 void Map::setMap(int x, int y)
 {
     int i, j;
@@ -24,12 +25,15 @@ vector<vector <string> > Map::getMap() const
     return harta;
 }
 
+//adaugarea unui agent in vector si pe harta
 void Map::addAgent( Agent* a)
 {
     harta[a->getPositionX()][a->getPositionY()] = a->character;
     agentsVector.push_back(a);
 }
 
+//stergerea unui agent din vectorul de agenti punandu-l pe ultimul element din vector si folosind functia pop
+//putin inspirat de pe https://github.com/fbilbie/Projects/blob/master/Surving%20game/poo_t3/World.cpp
 void Map::removeAgent(Agent& a)
 {
     harta[a.getPositionX()][a.getPositionY()] = " ";
@@ -41,6 +45,7 @@ void Map::removeAgent(Agent& a)
     agentsVector.pop_back();
 }
 
+//supraincarcarea operatorului << pentru afisarea hartii
 ostream& operator<<(ostream& out, const Map& m)
 {
     for (unsigned i = 0; i < m.getMap()[0].size() + 2; i++) {
@@ -59,5 +64,15 @@ ostream& operator<<(ostream& out, const Map& m)
         out << "-";
     }
     return out;
+}
+
+Map::~Map()
+{
+    //de distrugerea hartii se ocupa distrugatorul default din <vector>
+    for (unsigned i = 0; i < agentsVector.size(); i++)
+    {
+        if (agentsVector[i] != NULL)
+            delete agentsVector[i];
+    }
 }
 
