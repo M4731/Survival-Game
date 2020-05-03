@@ -32,7 +32,7 @@ void AgentHealer::ability()
 {
     if ( !this->cooldown && this->health <= 70 )
     {
-        cout << this->character << " was low hp and healed themselves for" << this->heal << ". " << endl;
+        cout << this->character << " was low hp and healed themselves for " << this->heal << ". " << endl;
         this->health = this->health + this->heal;
         this->cooldown = 1;
     }

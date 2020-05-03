@@ -1,6 +1,2 @@
-﻿  GameEngine.cpp
-G:\github Survival-Game\Survival Game\Survival\GameEngine.cpp(7,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-G:\github Survival-Game\Survival Game\Survival\GameEngine.cpp(89,11): warning C4018: '<': signed/unsigned mismatch
-G:\github Survival-Game\Survival Game\Survival\GameEngine.cpp(95,12): warning C4018: '<': signed/unsigned mismatch
-G:\github Survival-Game\Survival Game\Survival\GameEngine.cpp(174): warning C4715: 'GameEngine::StartFight': not all control paths return a value
+﻿  AgentHealer.cpp
   Survival.vcxproj -> G:\github Survival-Game\Survival Game\Debug\Survival.exe
